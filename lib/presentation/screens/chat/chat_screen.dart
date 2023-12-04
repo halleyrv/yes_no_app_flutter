@@ -19,10 +19,10 @@ class ChatScreen extends StatelessWidget {
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-                "https://www.telemundo.com/sites/nbcutelemundo/files/styles/promotional_content_16_9_small/public/images/article/cover/2016/04/01/jennifer-lopez-pitbull-ama-2011.jpg"),
+                "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blte52fc588aa36c464/6533f23662bf3d37747a2df9/Cristiano_Ronaldo(1).jpg?auto=webp&format=pjpg&width=1920&quality=60"),
           ),
         ),
-        title: Text('Mi mee'),
+        title: const Text('Mi mee'),
         centerTitle: false,
       ),
       body: _ChatView(),
@@ -47,7 +47,7 @@ class _ChatView extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final message = chatProvider.messageList[index];
                       return (message.fromWho == FromWho.hers)
-                      ? const HerMessageBubble()
+                      ? HerMessageBubble(message: message)
                       : MyMessageBubble(message: message);
 
                     })),
